@@ -1,0 +1,22 @@
+# Terraform files
+terraform/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# Sensitive configuration files
+*.tfvars
+*.auto.tfvars
+
+# Local state files
+terraform.rc
+
+# Log files
+*.log
+
+# Plan files
+*.tfplan
+
+# Other temporary files
+*.backup
+*~
