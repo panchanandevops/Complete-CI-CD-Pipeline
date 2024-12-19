@@ -20,7 +20,7 @@ resource "aws_iam_role" "aws_lbc" {
 }
 
 resource "aws_iam_policy" "aws_lbc" {
-  policy = file("./iam/AWSLoadBalancerController.json")
+  policy = file("${path.module}/iam/AWSLoadBalancerController.json")
   name   = "AWSLoadBalancerController"
 }
 
@@ -54,5 +54,5 @@ resource "helm_release" "aws_lbc" {
     value = "aws-load-balancer-controller"
   }
 
-  depends_on = [helm_release.metrics_server]
+  timeout = 600
 }
