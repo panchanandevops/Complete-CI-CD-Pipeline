@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: panchanandevops/golang-fiber-app:0.0.4
+          image: panchanandevops/golang-fiber-app:0.0.5
           ports:
             - name: http
               containerPort: 8080
