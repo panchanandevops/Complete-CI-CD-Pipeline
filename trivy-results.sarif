@@ -1,0 +1,360 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "CVE-2024-24790",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "golang: net/netip: Unexpected behavior from Is methods for IPv4-mapped IPv6 addresses"
+              },
+              "fullDescription": {
+                "text": "The various Is methods (IsPrivate, IsLoopback, etc) did not work as expected for IPv4-mapped IPv6 addresses, returning false for addresses which would return true in their traditional IPv4 forms."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-24790",
+              "help": {
+                "text": "Vulnerability CVE-2024-24790\nSeverity: CRITICAL\nPackage: stdlib\nFixed Version: 1.21.11, 1.22.4\nLink: [CVE-2024-24790](https://avd.aquasec.com/nvd/cve-2024-24790)\nThe various Is methods (IsPrivate, IsLoopback, etc) did not work as expected for IPv4-mapped IPv6 addresses, returning false for addresses which would return true in their traditional IPv4 forms.",
+                "markdown": "**Vulnerability CVE-2024-24790**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|stdlib|1.21.11, 1.22.4|[CVE-2024-24790](https://avd.aquasec.com/nvd/cve-2024-24790)|\n\nThe various Is methods (IsPrivate, IsLoopback, etc) did not work as expected for IPv4-mapped IPv6 addresses, returning false for addresses which would return true in their traditional IPv4 forms."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-34156",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "encoding/gob: golang: Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34156",
+              "help": {
+                "text": "Vulnerability CVE-2024-34156\nSeverity: HIGH\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)\nCalling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635.",
+                "markdown": "**Vulnerability CVE-2024-34156**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|stdlib|1.22.7, 1.23.1|[CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)|\n\nCalling Decoder.Decode on a message which contains deeply nested structures can cause a panic due to stack exhaustion. This is a follow-up to CVE-2022-30635."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-24789",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "golang: archive/zip: Incorrect handling of certain ZIP files"
+              },
+              "fullDescription": {
+                "text": "The archive/zip package\u0026#39;s handling of certain types of invalid zip files differs from the behavior of most zip implementations. This misalignment could be exploited to create an zip file with contents that vary depending on the implementation reading the file. The archive/zip package now rejects files containing these errors."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-24789",
+              "help": {
+                "text": "Vulnerability CVE-2024-24789\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.21.11, 1.22.4\nLink: [CVE-2024-24789](https://avd.aquasec.com/nvd/cve-2024-24789)\nThe archive/zip package's handling of certain types of invalid zip files differs from the behavior of most zip implementations. This misalignment could be exploited to create an zip file with contents that vary depending on the implementation reading the file. The archive/zip package now rejects files containing these errors.",
+                "markdown": "**Vulnerability CVE-2024-24789**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.21.11, 1.22.4|[CVE-2024-24789](https://avd.aquasec.com/nvd/cve-2024-24789)|\n\nThe archive/zip package's handling of certain types of invalid zip files differs from the behavior of most zip implementations. This misalignment could be exploited to create an zip file with contents that vary depending on the implementation reading the file. The archive/zip package now rejects files containing these errors."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-24791",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "net/http: Denial of service due to improper 100-continue handling in net/http"
+              },
+              "fullDescription": {
+                "text": "The net/http HTTP/1.1 client mishandled the case where a server responds to a request with an \u0026#34;Expect: 100-continue\u0026#34; header with a non-informational (200 or higher) status. This mishandling could leave a client connection in an invalid state, where the next request sent on the connection will fail. An attacker sending a request to a net/http/httputil.ReverseProxy proxy can exploit this mishandling to cause a denial of service by sending \u0026#34;Expect: 100-continue\u0026#34; requests which elicit a non-informational response from the backend. Each such request leaves the proxy with an invalid connection, and causes one subsequent request using that connection to fail."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-24791",
+              "help": {
+                "text": "Vulnerability CVE-2024-24791\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.21.12, 1.22.5\nLink: [CVE-2024-24791](https://avd.aquasec.com/nvd/cve-2024-24791)\nThe net/http HTTP/1.1 client mishandled the case where a server responds to a request with an \"Expect: 100-continue\" header with a non-informational (200 or higher) status. This mishandling could leave a client connection in an invalid state, where the next request sent on the connection will fail. An attacker sending a request to a net/http/httputil.ReverseProxy proxy can exploit this mishandling to cause a denial of service by sending \"Expect: 100-continue\" requests which elicit a non-informational response from the backend. Each such request leaves the proxy with an invalid connection, and causes one subsequent request using that connection to fail.",
+                "markdown": "**Vulnerability CVE-2024-24791**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.21.12, 1.22.5|[CVE-2024-24791](https://avd.aquasec.com/nvd/cve-2024-24791)|\n\nThe net/http HTTP/1.1 client mishandled the case where a server responds to a request with an \"Expect: 100-continue\" header with a non-informational (200 or higher) status. This mishandling could leave a client connection in an invalid state, where the next request sent on the connection will fail. An attacker sending a request to a net/http/httputil.ReverseProxy proxy can exploit this mishandling to cause a denial of service by sending \"Expect: 100-continue\" requests which elicit a non-informational response from the backend. Each such request leaves the proxy with an invalid connection, and causes one subsequent request using that connection to fail."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-34155",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "go/parser: golang: Calling any of the Parse functions containing deeply nested literals can cause a panic/stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34155",
+              "help": {
+                "text": "Vulnerability CVE-2024-34155\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)\nCalling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion.",
+                "markdown": "**Vulnerability CVE-2024-34155**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.22.7, 1.23.1|[CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)|\n\nCalling any of the Parse functions on Go source code which contains deeply nested literals can cause a panic due to stack exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2024-34158",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "go/build/constraint: golang: Calling Parse on a \u0026#34;// +build\u0026#34; build tag line with deeply nested expressions can cause a panic due to stack exhaustion"
+              },
+              "fullDescription": {
+                "text": "Calling Parse on a \u0026#34;// +build\u0026#34; build tag line with deeply nested expressions can cause a panic due to stack exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2024-34158",
+              "help": {
+                "text": "Vulnerability CVE-2024-34158\nSeverity: MEDIUM\nPackage: stdlib\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)\nCalling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion.",
+                "markdown": "**Vulnerability CVE-2024-34158**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|stdlib|1.22.7, 1.23.1|[CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)|\n\nCalling Parse on a \"// +build\" build tag line with deeply nested expressions can cause a panic due to stack exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            }
+          ],
+          "version": "0.57.1"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2024-24790",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-24790\nSeverity: CRITICAL\nFixed Version: 1.21.11, 1.22.4\nLink: [CVE-2024-24790](https://avd.aquasec.com/nvd/cve-2024-24790)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-34156",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-34156\nSeverity: HIGH\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34156](https://avd.aquasec.com/nvd/cve-2024-34156)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-24789",
+          "ruleIndex": 2,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-24789\nSeverity: MEDIUM\nFixed Version: 1.21.11, 1.22.4\nLink: [CVE-2024-24789](https://avd.aquasec.com/nvd/cve-2024-24789)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-24791",
+          "ruleIndex": 3,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-24791\nSeverity: MEDIUM\nFixed Version: 1.21.12, 1.22.5\nLink: [CVE-2024-24791](https://avd.aquasec.com/nvd/cve-2024-24791)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-34155",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-34155\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34155](https://avd.aquasec.com/nvd/cve-2024-34155)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2024-34158",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Package: stdlib\nInstalled Version: v1.22.3\nVulnerability CVE-2024-34158\nSeverity: MEDIUM\nFixed Version: 1.22.7, 1.23.1\nLink: [CVE-2024-34158](https://avd.aquasec.com/nvd/cve-2024-34158)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "myapp",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "myapp: stdlib@v1.22.3"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///"
+        }
+      },
+      "properties": {
+        "imageID": "sha256:69bea40114a98cdd9a4ccd8cc9987616abbef8c4609e9114e78a031a320a9da1",
+        "imageName": "panchanandevops/golang-fiber-app:0.0.4",
+        "repoDigests": [
+          "panchanandevops/golang-fiber-app@sha256:378acb515818fd539cf6e37136cc8295c8ffad6852494feb4c8586a132ee48e3"
+        ],
+        "repoTags": [
+          "panchanandevops/golang-fiber-app:0.0.4"
+        ]
+      }
+    }
+  ]
+}
