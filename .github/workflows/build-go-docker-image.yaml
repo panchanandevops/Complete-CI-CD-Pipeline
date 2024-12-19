@@ -75,7 +75,7 @@ jobs:
 
       - name: Update deployment image in YAML
         run: |
-          sed -i "s|image: panchanandevops/golang-fiber-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/k8s/5-api-deployment.yaml
+          sed -i "s|image: panchanandevops/golang-fiber-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/k8s/1-deployment.yaml
 
       - name: Commit changes directly to main
         run: |
