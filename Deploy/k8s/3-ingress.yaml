@@ -5,7 +5,7 @@ metadata:
   name: myapp
   namespace: 3-example
 spec:
-  ingressClassName: external-nginx
+  ingressClassName: nginx
   rules:
     - host: panchanandevops.com
       http:
