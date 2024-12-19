@@ -11,6 +11,7 @@ on:
     paths:
       - "myapp" 
       - "Deploy"
+      - ".github/workflows/"
 
 jobs:
   build-backend:
@@ -18,6 +19,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history to ensure branch information is available
+
+      - name: Set Git user identity
+        run: |
+          git config --global user.email "panchanandevops@gmail.com"
+          git config --global user.name "panchanandevops"
+
+      - name: Switch to main branch
+        run: |
+          git fetch origin main
+          git checkout main
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -67,11 +80,6 @@ jobs:
         if: always()
         with:
           sarif_file: "trivy-results.sarif"
-
-      - name: Set Git user identity
-        run: |
-          git config --global user.email "panchanandevops@gmail.com"
-          git config --global user.name "panchanandevops"
 
       - name: Update deployment image in YAML
         run: |
