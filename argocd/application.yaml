@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-fiber-app
+  name: myapp-helm
   namespace: argocd # Namespace for ArgoCD resources
   finalizers:
     - resources-finalizer.argocd.argoproj.io # Finalizer to clean up resources when deleting
@@ -9,10 +9,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/panchanandevops/Complete-CI-CD-Pipeline.git
-    targetRevision: HEAD
-    path: Deploy/k8s/
+    targetRevision: main
+    path: Deploy/myapp-helm-chart/ # Path within the Git repository containing application manifests
+    helm:
+      releaseName: demo
   destination:
-    server: https://kubernetes.default.svc # Kubernetes cluster API server address
+    server: https://kubernetes.default.svc 
+    namespace: dev
   syncPolicy:
     automated:
       prune: true # Enable automatic pruning of resources not defined in Git
@@ -20,6 +23,6 @@ spec:
       allowEmpty: false # Do not allow sync of empty applications
     syncOptions:
       - Validate=true # Validate Kubernetes manifests during sync
-      - CreateNamespace=false # Do not create namespaces during sync
+      - CreateNamespace=true # create namespaces during sync
       - PrunePropagationPolicy=foreground # Prune propagation policy during sync
       - PruneLast=true # Prune resources in the last prune round
