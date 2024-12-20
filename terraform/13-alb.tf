@@ -55,4 +55,6 @@ resource "helm_release" "aws_lbc" {
   }
 
   timeout = 600
+
+  depends_on = [helm_release.metrics_server]
 }
