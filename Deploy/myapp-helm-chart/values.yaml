@@ -1,7 +1,7 @@
 namespace: dev
 app:
   name: myapp
-  image: panchanandevops/golang-fiber-app:0.0.5
+  image: panchanandevops/golang-fiber-app:0.0.7
   containerPort: 8080
   resources:
     requests:
