@@ -1,4 +1,4 @@
-namespace: 3-example
+namespace: dev
 app:
   name: myapp
   image: panchanandevops/golang-fiber-app:0.0.5

@@ -81,10 +81,10 @@ jobs:
 
       - name: Update deployment image in YAML
         run: |
-          sed -i "s|image: panchanandevops/golang-fiber-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/k8s/1-deployment.yaml
+          sed -i "s|image: panchanandevops/golang-fiber-app:.*|image: ${{ steps.meta.outputs.tags }}|g" Deploy/myapp-helm-chart/values.yaml
 
       - name: Commit changes directly to main
         run: |
-          git add Deploy/k8s/1-deployment.yaml trivy-results.sarif 
+          git add Deploy/myapp-helm-chart/values.yaml trivy-results.sarif 
           git commit -m "Update tag in Deployment image tag and add Trivy scan results"
           git push origin main
