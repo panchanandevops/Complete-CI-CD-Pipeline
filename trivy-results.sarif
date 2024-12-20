@@ -346,13 +346,13 @@
         }
       },
       "properties": {
-        "imageID": "sha256:024163d0454b1f8277c511dca50b5b760e278ca194d0a63d645e71fda5bd0efc",
-        "imageName": "panchanandevops/golang-fiber-app:0.0.5",
+        "imageID": "sha256:89e6ddfb2d5045d8b0f2be9808fe57b041dfabcb4350959dc8a5d0702b8db0b8",
+        "imageName": "panchanandevops/golang-fiber-app:0.0.6",
         "repoDigests": [
-          "panchanandevops/golang-fiber-app@sha256:0b9d86cfccc9d2e7ee5a69650323f9d70582d517c87b8f90e5a58479184dd88a"
+          "panchanandevops/golang-fiber-app@sha256:a957f67177d7c5d1fc724ae66a3d344d7a4cce2f9f1c1a6b2305b333e7aabd47"
         ],
         "repoTags": [
-          "panchanandevops/golang-fiber-app:0.0.5"
+          "panchanandevops/golang-fiber-app:0.0.6"
         ]
       }
     }
