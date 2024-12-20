@@ -1,0 +1,1 @@
+This is a dummy go fiber app for demonstrating CI/CD pipeline and deploying onto AWS EKS using GitOps principle.
