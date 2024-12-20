@@ -44,3 +44,9 @@ resource "aws_eks_cluster" "eks" {
 
   depends_on = [aws_iam_role_policy_attachment.eks]
 }
+
+# Output EKS Cluster Endpoint
+output "eks_cluster_endpoint" {
+  value       = aws_eks_cluster.eks.endpoint
+  description = "The endpoint of the EKS cluster."
+}
